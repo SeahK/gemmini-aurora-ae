@@ -516,7 +516,7 @@ class ReservationStation[T <: Data : Arithmetic, U <: Data, V <: Data](config: G
   // assert(min_pop_count < 2.U)
   dontTouch(pop_count_packed_deps)
   dontTouch(min_pop_count)
-
+/*
   val cycles_since_issue = RegInit(0.U(16.W))
 
   when (io.issue.ld.fire() || io.issue.st.fire() || io.issue.ex.fire() || !io.busy || io.completed.fire) {
@@ -525,12 +525,12 @@ class ReservationStation[T <: Data : Arithmetic, U <: Data, V <: Data](config: G
     cycles_since_issue := cycles_since_issue + 1.U
   }
   assert(cycles_since_issue < PlusArg("gemmini_timeout", 10000), "pipeline stall")
-
+*/
   for (e <- entries) {
     dontTouch(e.bits.allocated_at)
   }
-
-  val cntr = Counter(2000000)
+/*
+  //val cntr = Counter(2000000)
   when (cntr.inc()) {
     printf(p"Utilization: $utilization\n")
     printf(p"Utilization ld q (incomplete): $utilization_ld_q_unissued\n")
@@ -552,7 +552,7 @@ class ReservationStation[T <: Data : Arithmetic, U <: Data, V <: Data](config: G
 
     printf(p"Packed deps: $packed_deps\n")
   }
-
+*/
   if (use_firesim_simulation_counters) {
     PerfCounter(io.busy, "reservation_station_busy", "cycles where reservation station has entries")
     PerfCounter(!io.alloc.ready, "reservation_station_full", "cycles where reservation station is full")

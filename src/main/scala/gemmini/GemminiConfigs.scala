@@ -61,7 +61,7 @@ case class GemminiArrayConfig[T <: Data : Arithmetic, U <: Data, V <: Data](
 
                                                                              acc_read_full_width: Boolean = true,
                                                                              acc_read_small_width: Boolean = true,
-                                                                             use_dedicated_tl_port: Boolean = true,
+                                                                             use_dedicated_tl_port: Boolean = false, //true,
 
                                                                              tlb_size: Int = 4,
                                                                              use_tlb_register_filter: Boolean = true,
