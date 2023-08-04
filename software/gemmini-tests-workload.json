@@ -3,7 +3,7 @@
   "workdir" : ".",
   "base" : "br-base.json",
   "overlay" : "overlay",
-  "rootfs-size" : "20GiB",
+  "rootfs-size" : "32GiB",
   "host-init" : "host-init.sh",
   "jobs" : [
     {
