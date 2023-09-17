@@ -7,7 +7,9 @@
 echo "Building gemmini-rocc-tests benchmark"
 RDIR=$(pwd)
 FSIMSW=/home/centos/firesim-aurora-ae/sw/firesim-software/
-cp -r ../../../tests/imagenet overlay/root/
+#cd gemmini-rocc-tests/
+#cp -r build/* ../overlay/root/
+cp -r imagenet overlay/root/
 cd $FSIMSW
 rm -rf images/firechip/gemmini-tests-workload*
 ./marshal -v --workdir $RDIR build gemmini-tests-workload.json
